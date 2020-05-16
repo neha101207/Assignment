@@ -50,6 +50,7 @@ class UserDetails extends Component {
   handlePostId = async (e) => {
 
     const { setAppData } = this.props;
+    setAppData("spinner",true)
     const postresponse = await httpRequest({
       endPoint: `https://jsonplaceholder.typicode.com/posts/${e}`,
       method: "get",
@@ -57,7 +58,8 @@ class UserDetails extends Component {
     setAppData("postItem", postresponse)
     setAppData("addpost", false)
 
-    await setAppData("showpost", true)
+     setAppData("showpost", true)
+     setAppData("spinner",false)
 
   }
 
@@ -210,7 +212,7 @@ class UserDetails extends Component {
 
           <Grid align="center" style={{ padding: "5px 5px 5px 5px", fontSize: "20px" }}><label><b>{user_details_byid && user_details_byid.name} Post</b></label></Grid>
           {user_post_byid.map((ele, index) => {
-            return (<Card>
+            return (<Card key={index}>
               <Grid container style={{ display: 'flex', marginBottom: "1%", padding: "30px 10px 10px 30px" }}>
                 <Grid item md={2}>  <b>Id:</b>{ele && ele.id}</Grid>
                 <Grid item md={7}> <b> Title:</b>{ele && ele.title}</Grid>

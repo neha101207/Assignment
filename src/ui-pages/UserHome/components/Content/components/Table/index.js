@@ -50,22 +50,7 @@ class TableData extends Component {
 
     }
 
-    //  getUser=async()=>{
-    //      debugger
-    //     const { setAppData } = this.props
-    //       const response = await httpRequest({
-    //         endPoint: " https://jsonplaceholder.typicode.com/users",
-    //         method: "get",
-
-    //       });
-    //       if(response){
-    //         setAppData("users", response)
-    //         const {users}=this.props;
-    //         console.log("users", users);
-    //       }
-
-
-    //  }
+  
 
     render() {
 
@@ -94,7 +79,7 @@ class TableData extends Component {
                         <TableBody>
                             {users && users.map((field, index) => {
                                 return (
-                                    <TableRow>
+                                    <TableRow key={index}>
                                         <TableCell>{field.id}</TableCell>
                                         <TableCell className={classes.clickevent}>{field.name}</TableCell>
                                         <TableCell className={classes.clickevent}>{field.username}</TableCell>
