@@ -17,8 +17,9 @@ const Container=Loadable({
 const UserRoutes=()=>{
   return(
     <div>
+      <Route exact path="/" component={Dashboard} />
       <Route exact path="/user-home" component={Dashboard} />
-      <Route exact path="/user-details" component={Container} />
+      <Route exact path="/user-home/user-details/:id" component={Container} />
     </div>
   )
 }

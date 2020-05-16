@@ -2,7 +2,7 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { connect } from "react-redux";
 import "react-table/react-table.css";
-import Table from './table'
+import Table from '../components/Table'
 import { mapDispatchToProps } from "../../../../../ui-utils/commons";
 
 const styles = theme => ({
